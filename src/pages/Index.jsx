@@ -1,7 +1,10 @@
 import { Container, VStack, Heading, Text, Button, HStack, Box, Image, IconButton } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
 import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
 
 const Index = () => {
+  const navigate = useNavigate();
+
   return (
     <Container centerContent maxW="container.lg" height="100vh" display="flex" flexDirection="column" justifyContent="center" alignItems="center" p={4}>
       <VStack spacing={8} textAlign="center">
@@ -14,7 +17,7 @@ const Index = () => {
           <Button colorScheme="teal" size="lg">
             Get Tickets
           </Button>
-          <Button colorScheme="teal" variant="outline" size="lg">
+          <Button colorScheme="teal" variant="outline" size="lg" onClick={() => navigate("/tour-dates")}>
             Tour Dates
           </Button>
         </HStack>
